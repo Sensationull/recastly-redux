@@ -11,6 +11,6 @@ const mapDispatchToProps = (dispatch, ownProps) => (
   }
 );
 
-const VideoListContainer = connect(mapStateToProps, mapDispatchToProps)(VideoPlayer);
+const VideoListContainer = connect(mapStateToProps, mapDispatchToProps)(VideoList);
 
 export default VideoListContainer;

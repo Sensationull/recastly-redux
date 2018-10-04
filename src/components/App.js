@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Nav from './Nav.js';
 import VideoListContainer from '../containers/VideoListContainer.js';
 import VideoPlayerContainer from '../containers/VideoPlayerContainer.js';
-import Nav from './Nav.js';
 import handleSearchChange from '../actions/search.js';
 
 class App extends React.Component {
@@ -37,5 +38,5 @@ const mapDispatchToProps = (dispatch, ownProps) => (
   }
 );
 
-const AppContainer = connect(null, mapDispatchToProps)(Search);
+const AppContainer = connect(null, mapDispatchToProps)(App);
 export default AppContainer;
