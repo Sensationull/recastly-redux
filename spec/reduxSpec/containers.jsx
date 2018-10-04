@@ -14,7 +14,7 @@ var component,
 
 var store = createMockStore({
   videoList: [{script: 'but only when they\'re green.'}],
-  currentVideo: { script: 'I like traffic lights.'}
+  video: { script: 'I like traffic lights.'}
 }, {changeVideoList});
 
 describe('containers', function() {
@@ -27,8 +27,8 @@ describe('containers', function() {
       store.dispatch.reset();
     });
     it('should have a prop called handleSearchInputChange which dispatches handleVideoSearch', function() {
-      component.props().handleSearchInputChange('kitten mittens');
-      expect(component.props().handleSearchInputChange).to.be.a('function');
+      component.props().handleVideoSearch('kitten mittens');
+      expect(component.props().handleVideoSearch).to.be.a('function');
       expect(store.dispatch.callCount).to.equal(1);
     });
     it('should be created using the React-Redux connect method', function() {
@@ -62,7 +62,7 @@ describe('containers', function() {
     beforeEach(function() {
       store.dispatch.reset();
     });
-    it('should have a prop called video connected to the currentVideo in the store', function() {
+    it('should have a prop called video connected to the video in the store', function() {
       expect(component.prop('video')).to.be.an('object');
       expect(component.prop('video')).to.deep.equal({ script: 'I like traffic lights.'});
     });
