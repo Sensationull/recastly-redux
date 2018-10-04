@@ -3,11 +3,11 @@ import changeVideoList from './videoList.js';
 import changeVideo from './currentVideo.js';
 import YOUTUBE_API_KEY from '../config/youtube.js';
 
-const handleVideoSearch = (q) => {
+const handleSearchChange = (q) => {
   const options = {
-    key: this.props.API_KEY,
+    key: YOUTUBE_API_KEY,
     query: q,
-  }
+  };
 
   return (dispatch) => {
     searchYouTube(options, (videos) => {
@@ -17,4 +17,4 @@ const handleVideoSearch = (q) => {
   };
 };
 
-export default handleVideoSearch;
+export default handleSearchChange;

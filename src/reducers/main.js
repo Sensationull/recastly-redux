@@ -14,7 +14,7 @@ const defaultReducer = (state = initialState) => {
 }
  
 const rootReducer = combineReducers({ 
-  currentVideo: currentVideoReducer, 
+  video: currentVideoReducer, 
   videoList: videoListReducer, 
   default: defaultReducer, 
 });

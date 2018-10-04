@@ -71,14 +71,14 @@ describe('reducers', function() {
       var postState = rootReducer(preState, changeVideoList([1, 2, 3]));
       expect(postState.videoList).to.not.deep.equal(preState.videoList);
     });
-    it('the default state should have a currentVideo property.', function() {
+    it('the default state should have a video property.', function() {
       var defaultState = rootReducer(undefined, {});
-      expect(defaultState.currentVideo).to.equal(null);
+      expect(defaultState.video).to.equal(null);
     });
     it('should change the currentVideo property in state when an action of type "CHANGE_VIDEO" is passed in', function() {
       var preState = rootReducer(fakeState, changeVideo({script: 'this is my only line.'}));
       var postState = rootReducer(preState, changeVideo({script: 'Always look on the bright side of life.'}));
-      expect(postState.currentVideo).to.not.deep.equal(preState.currentVideo);
+      expect(postState.video).to.not.deep.equal(preState.video);
     });
     it('should be the result of invoking redux.combineReducers.', function() {
       expect(rootReducer.name === 'combination').to.be.true;
